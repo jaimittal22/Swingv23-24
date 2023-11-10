@@ -79,21 +79,26 @@ public class SwingControlDemo implements ActionListener {
         JButton submitButton = new JButton("Submit");
         JButton cancelButton = new JButton("Cancel");
         JButton addButton =  new JButton("Add");
+        JButton subtractButton =  new JButton("Subtract");
 
         okButton.setActionCommand("OK");
         submitButton.setActionCommand("Submit");
         cancelButton.setActionCommand("Cancel");
         addButton.setActionCommand("Add");
+        subtractButton.setActionCommand("Substract");
+
 
         okButton.addActionListener(new ButtonClickListener());
         submitButton.addActionListener(new ButtonClickListener());
         cancelButton.addActionListener(new ButtonClickListener());
         addButton.addActionListener(new ButtonClickListener());
+        subtractButton.addActionListener(new ButtonClickListener());
 
         controlPanel.add(okButton);
         controlPanel.add(submitButton);
         controlPanel.add(cancelButton);
         controlPanel.add(addButton);
+        controlPanel.add(subtractButton);
 
         mainFrame.setVisible(true);
     }
@@ -124,6 +129,11 @@ public class SwingControlDemo implements ActionListener {
             }
             else {
                 statusLabel.setText("Cancel Button clicked.");
+            }
+            if(command.equals("Subtract")){
+                statusLabel.setText("Subtract Button clicked.");
+
+
             }
         }
     }
